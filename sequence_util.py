@@ -6,7 +6,6 @@ parser = argparse.ArgumentParser()
 parser.add_argument('-p', '--path',
                     help="path to FASTA (or Multi-FASTA) file",
                     required=True)
-args = parser.parse_args()
 
 COMPLEMENTS = {"A": "T",
                "C": "G",
@@ -23,6 +22,7 @@ def reverse_complement(seq):
 
 
 def main():
+    args = parser.parse_args()
     sequences = read_fasta(args.path)
 
     for sequence in sequences.keys():

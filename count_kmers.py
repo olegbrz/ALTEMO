@@ -11,7 +11,6 @@ parser.add_argument('-k',
                     help="k-mer word length",
                     type=int,
                     required=True)
-args = parser.parse_args()
 
 g_counts = {}
 
@@ -68,6 +67,7 @@ def compute_relative(counts: Dict[str, int], sequence_length: int) -> Dict[str, 
 
 
 def main():
+    args = parser.parse_args()
     sequences = read_fasta(args.path)
     results = {k: count_kmers(sequences[k], args.k) for k in sequences.keys()}
     global g_counts
@@ -90,5 +90,5 @@ def main():
     print(f"{SIMPLE_SEPARATOR}")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
