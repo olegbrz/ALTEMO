@@ -3,7 +3,9 @@ from misc.cli_components import SIMPLE_SEPARATOR, DOUBLE_SEPARATOR
 import argparse
 
 parser = argparse.ArgumentParser()
-parser.add_argument("path")
+parser.add_argument('-p', '--path',
+                    help="path to FASTA (or Multi-FASTA) file",
+                    required=True)
 args = parser.parse_args()
 
 COMPLEMENTS = {"A": "T",
