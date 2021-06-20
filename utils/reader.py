@@ -10,7 +10,7 @@ def read_fasta(path: str) -> Dict[str, str]:
 
     Returns:
         Dict[str, str]: dictionary of sequence names and sequences read from
-        the file
+        the file.
     """
 
     sequences = {}
