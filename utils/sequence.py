@@ -9,12 +9,28 @@ COMPLEMENTS = {"A": "T",
 STOP_CODONS = ["TAA", "TAG", "TGA"]
 
 
-def reverse(sequence):
+def reverse(sequence: str) -> str:
+    """reverse reverses a sequence.
+
+    Args:
+        sequence (str): DNA or RNA sequence.
+
+    Returns:
+        str: reversed sequence.
+    """
     return sequence[::-1]
 
 
-def reverse_complement(seq):
-    return "".join(COMPLEMENTS.get(base, base) for base in reversed(seq))
+def reverse_complement(sequence: str) -> str:
+    """reverse_complement computes the reversed complement string for DNA.
+
+    Args:
+        sequence (str): DNA sequence.
+
+    Returns:
+        str: reverse complementary secuence.
+    """
+    return "".join(COMPLEMENTS.get(base, base) for base in reversed(sequence))
 
 
 def search_shifted(sequence: str, shift=0, search: List[str] = STOP_CODONS) -> List[int]:
