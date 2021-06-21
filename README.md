@@ -11,6 +11,9 @@
 	<a href="https://sonarcloud.io/dashboard?id=olegbrz_ALTEMO">
      	<img alt="Code Smells" src="https://sonarcloud.io/api/project_badges/measure?project=olegbrz_ALTEMO&metric=code_smells" />
 	</a>
+	<a href="https://sonarcloud.io/dashboard?id=olegbrz_ALTEMO">
+     	<img alt="Lines of code" src="https://sonarcloud.io/api/project_badges/measure?project=olegbrz_ALTEMO&metric=ncloc" />
+	</a>
 </p>
 
 ALTEMO is a package of functions written in Python for bioinformatics proposed as a final project in the course of Algorithmic Techniques and Models (325) at the University of Málaga.
