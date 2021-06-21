@@ -1,4 +1,5 @@
-from typing import List
+from typing import Dict, List
+from functools import reduce
 
 
 def compute_distances(positions: List[int]) -> List[int]:
@@ -16,3 +17,7 @@ def compute_distances(positions: List[int]) -> List[int]:
         List[int]: list of distances (integers).
     """
     return [positions[i+1]-positions[i] for i in range(len(positions)-1)]
+
+
+def join_dict_values(dictionary: Dict):
+    return reduce(lambda x, y: x+y, list(dictionary.values()))
