@@ -30,8 +30,6 @@ def get_fragments(sequence: str) -> Dict[str, List[int]]:
     for shift in [0, 1, 2]:
         positions = search_shifted(sequence, shift)
         distances[f"+{shift+1}F"] = compute_distances(positions)
-
-    for shift in [0, 1, 2]:
         positions = search_shifted(sequence_rc, shift)
         distances[f"-{shift+1}R"] = compute_distances(positions)
 
