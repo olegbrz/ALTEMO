@@ -1,4 +1,5 @@
 from utils.reader import read_fasta
+from utils.sequence import reverse, reverse_complement
 from misc.cli_components import SIMPLE_SEPARATOR, DOUBLE_SEPARATOR
 import argparse
 
@@ -6,19 +7,6 @@ parser = argparse.ArgumentParser()
 parser.add_argument('-p', '--path',
                     help="path to FASTA (or Multi-FASTA) file",
                     required=True)
-
-COMPLEMENTS = {"A": "T",
-               "C": "G",
-               "G": "C",
-               "T": "A"}
-
-
-def reverse(sequence):
-    return sequence[::-1]
-
-
-def reverse_complement(seq):
-    return "".join(COMPLEMENTS.get(base, base) for base in reversed(seq))
 
 
 def main():
