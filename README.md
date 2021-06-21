@@ -2,8 +2,9 @@
 
 <p align="center">
 	<a href="https://www.python.org/downloads/release/python-360/">
-   		<img alt="Python 3.6" src="https://img.shields.io/badge/python-3.6+-blue.svg" />
+   		<img alt="Python 3.6" src="https://img.shields.io/badge/Python-3.6+-blue.svg" />
 	</a>
+		<img alt="Bioinformatics" src="https://img.shields.io/badge/-Bioinformatics-%23008080" />
 	<a href="https://sonarcloud.io/dashboard?id=olegbrz_ALTEMO">
 		<img alt="Quality Gate Status" src="https://sonarcloud.io/api/project_badges/measure?project=olegbrz_ALTEMO&metric=alert_status">
 	</a>
