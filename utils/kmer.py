@@ -2,6 +2,7 @@ from typing import Dict, Tuple
 
 g_counts = {}
 
+
 def count_kmers(sequence: str, k: int) -> Dict[str, Tuple[int, float]]:
     """count_kmers counts absolute and relative kmer occurence given a sequence.
 
@@ -31,23 +32,24 @@ def count_kmers(sequence: str, k: int) -> Dict[str, Tuple[int, float]]:
             g_counts[current_kmer] += 1
 
     # Relative count computing
-    counts = compute_relative(counts, length)
+    counts = compute_relative(counts, length, k)
 
     return counts
 
 
-def compute_relative(counts: Dict[str, int], sequence_length: int) -> Dict[str, Tuple[int, float]]:
+def compute_relative(counts: Dict[str, int], sequence_length: int, k: int) -> Dict[str, Tuple[int, float]]:
     """compute_relative computes the relative occurrence of a kmer given a dict
     of absolute counts and the sequence's length.
 
     Args:
         counts (Dict[str, int]): kmer counts dictionary.
         sequence_length (int): sequence length (bases).
+        k (int): kmer word length.
 
     Returns:
         Dict[str, Tuple[int, float]]: absolute and relative counts of kmers.
     """
     for count in counts:
         n = counts[count]
-        counts[count] = (n, round(n/sequence_length, 6))
+        counts[count] = (n, round(n/(sequence_length-k+1), 6))
     return counts
